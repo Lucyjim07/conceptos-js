@@ -1,5 +1,6 @@
 // Los siguientes son ejemplos de funciones nombradas y declaración de funciones
 // 1. Declarar la función y luego usarla, ejecutarla
+// Function definition
 function add(num1, num2) {
     return num1 + num2
 }
@@ -8,6 +9,7 @@ const addResult = add(5, 10)
 console.log(addResult)
 
 
+// Function expression
 // 2. Ejecutar la función y luego definirla
 const subtractResult = subtract(7, 2);
 console.log(subtractResult)
