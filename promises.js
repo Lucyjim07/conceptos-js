@@ -21,13 +21,36 @@ const promesa = new Promise(function (resolveFn, rejectFn) {
     }
 })
 
-promesa
-    .then(function (resultado) { console.log(`Resultado exitoso: ${resultado}`); })
-    .catch(function (error) { console.error(`Error: ${error}`) });
+// El objeto Promise funciona como una unión entre el resultado del código ejecutado en el executor (código dentro de la promesa) y las funciones consumidoras de ese resultado o error, dependiendo de que retorna la promesa. Las funciones consumidoras pueden ser registradas o relacionadas con el resultado generado a traves de los métodos .then y .catch
+
+// El método .then puede recibir 2 argumentos. 
+// - El primero es una función que se ejecuta cuando se resuelve la promesa y recibe el resultdo
+// - El segundo es una función que se ejecuta cuando se rechaza la promesa y recibe un error
+// los argumentos del método .then son opcionales y se pueden presentar los siguientes casos
+// - .then(f, g), en donde f y g son funciones. Se están pasando funciones para controlar el resolve y el reject
+// - .then(f, null) o .then(f) en donde solo se pasa una función para controlar si la promesa se resolvió
+// - .then(null, g) en donde solo se pasa una función para controlar si la promesa se rechazó. Para este caso en donde se está interesado en el error, también se puede usar otro método que es el .catch(g)
+
+
+promesa.then(
+    function(resultado) { console.log(`Resultado exitoso: ${resultado}`); },
+    function (error) { console.error(`Error: ${error}`) }
+)
+
+// const funcionSiExito = function(resultado) { console.log(`Resultado exitoso: ${resultado}`); }
+// const funcionSiError = function (error) { console.error(`Error: ${error}`) }
+// promesa.then(funcionSiExito, funcionSiError)
+// promesa.then(funcionSiExito, null)
+// promesa.then(null, funcionSiError)
+
+
+// promesa
+//     .then(function (resultado) { console.log(`Resultado exitoso: ${resultado}`); })
+//     .catch(function (error) { console.error(`Error: ${error}`) });
 
 
 
-
+// ------------------------------------------------------
 // Usando una funcion generadora para retornar una Promise
 
 function generadora(parametros) {
@@ -48,3 +71,74 @@ const exito = Math.random() < 0.5
 generadora(exito)
     .then(function (resultado) { console.log(`Resultado exitoso: ${resultado}`); })
     .catch(function (error) { console.error(`Error: ${error}`) });
+
+
+// Finalmente se puede reemplazar la sintaxis para la creación de las funciones y pasar de funciones definidas a funciones en forma de expresion
+
+// 1. Promesa como variable
+const otraPromesa = new Promise((resolveFn, rejectFn) => {
+    const exitoso = Math.random() < 0.5
+    console.log(`Resultado random: ${exitoso}`)
+    if (exitoso) {
+        console.log(`Funcion resolve: exitoso -> ${typeof resolveFn}`)
+        resolveFn("OK desde promesa")
+        // setTimeout(() => resolveFn("OK desde promesa"), 2000)
+    } else {
+        console.log(`Funcion reject: fallido -> ${typeof rejectFn}`)
+        rejectFn("Error desde promesa")
+        // setTimeout(() => rejectFn("Error desde promesa"), 2000)
+    }
+})
+
+otraPromesa
+    .then(resultado => console.log(`Resultado exitoso: ${resultado}`))
+    .catch(error => console.error(`Error: ${error}`));
+
+// 2. Promesa dentro de funcion generadora
+const generadoraExpresion = (parametros) => {
+    return new Promise((resolveFn, rejectFn) => {
+        console.log(`Resultado random: ${parametros}`)
+        if (parametros) {
+            console.log(`Funcion resolve: exitoso -> ${typeof resolveFn}`)
+            resolveFn("OK desde promesa")
+        } else {
+            console.log(`Funcion reject: fallido -> ${typeof rejectFn}`)
+            rejectFn("Error desde promesa")
+        }
+    })
+}
+
+const parametroAleatorio = Math.random() < 0.5
+
+generadoraExpresion(parametroAleatorio)
+    .then(resultado => console.log(`Resultado exitoso: ${resultado}`))
+    .catch(error => console.error(`Error: ${error}`));
+
+
+// async - await
+
+const generadoraExpresionAsync = (parametros) => {
+    return new Promise((resolveFn, rejectFn) => {
+        console.log(`Resultado random: ${parametros}`)
+        if (parametros) {
+            console.log(`Funcion resolve: exitoso -> ${typeof resolveFn}`)
+            resolveFn("OK desde promesa")
+        } else {
+            console.log(`Funcion reject: fallido -> ${typeof rejectFn}`)
+            rejectFn("Error desde promesa")
+        }
+    })
+}
+
+const parametroAleatorioAsync = Math.random() < 0.5
+
+const funcionAsincrona = async () => {
+    var promesa = generadoraExpresionAsync(parametroAleatorioAsync);
+    try {
+        await promesa
+    } catch (error) {
+        console.error(`Error en catch: ${error}`)
+    }
+}
+
+funcionAsincrona()
