@@ -59,6 +59,42 @@ console.log(typeof new Date())
 console.log(typeof new Set())
 console.log(typeof new Object())
 
+// Los objetos en general pueden ser estructuras que nos ayudan a guardar y organizar información.
+
+const user = {
+    name: 'Jon',
+    lastname: 'Doe',
+    age: 30,
+    address: {
+        country: 'Colombia',
+        city: 'Pasto',
+        street: 'La Merced'
+    },
+    friends: ['Brandon', 'Elena'],
+    active: true,
+    sendMail: function () {
+        return 'sending mail...'
+    }
+}
+
+// Para acceder a los valores de el objeto se utiliza la notación punto (.) la cual indica que con el nombre del objeto seguido de un punto se tienen acceso a las propiedades de ese objeto
+
+console.log(user.name)
+console.log(user.address.city)
+
+// Si no sabemos si existe o no una propiedad se puede usar la notación interrogante (?) para verificar si la propiedad existe
+
+console.log(user.credentials.password)
+// console.log(user.credentials?.password)
+
+// Destructuracion de un objeto
+// Existe una forma más fácil de acceder a las propiedades de un objeto y es mediante la extracción de esas propiedades usando destructuración. Por ejemplo, del objeto user solo nos interesa su name y su lastname, podemos crear variables que contengan esos valores mediante la notación de llaves {}
+
+const { name, lastname } = user
+console.log(name)
+console.log(lastname)
+
+
 // 9. Functions
 // Es una estructura sin datos cuyo objetivo es agrupar un conjunto de pasos o lógica con el fin de ser reutilizado. Es un objeto especial
 console.log(typeof function() {})
