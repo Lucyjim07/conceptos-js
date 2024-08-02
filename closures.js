@@ -1,7 +1,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
 // https://developer.mozilla.org/es/docs/Web/JavaScript/Closures
 
-// Una closure es la combinación de una función agrupada dentro de otra con referencia a su estado adyacente
+// Una closure es la combinación de una función agrupada dentro de otra funcion con referencia a su estado adyacente
 // Es decir una closuere da acceso al scope de una funcion externa desde una función interna
 
 // 1. Ejemplo de closure
