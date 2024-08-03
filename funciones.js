@@ -88,8 +88,34 @@ console.log(add(5, 8))
 let addSimple = (num1, num2) => num1 + num2
 console.log(addSimple(2, 2))
 // Si la cantidad de parametros de la arrow function es solo uno, se pueden eliminar los parentesis de la parte de la izquierda de la expresión
-let sayHello = (name) => {return console.log(`Hello ${name}`)}
+let sayHello = name => { console.log(`Hello ${name}`) }
 sayHello('Lucy')
+// Si la cantidad de parámetros de la arrow function es 0, se "debe" colocar los parentesis para indicar que no existen parámetros
+let helloWorld = () => { console.log('Hello world') }
+helloWorld()
+
+// Esta forma más simple de representar puede retornar cualquier tipo de primitivo y también puede retornar otra funcion, pero existe un caso especial al momento de retornar objetos.
+const showText = () => 'Un texto'
+console.log(showText())
+
+const showNumber = () => 20
+console.log(showNumber())
+
+const showBoolean = () => true
+console.log(showBoolean())
+
+const showArray = () => [1, 2, 3]
+console.log(showArray())
+
+const showFunction = () => function() {}
+console.log(showFunction())
+
+// Cuando se declara una función, las llaves indican que se va a inicir el cuerpo de la función, por lo que al usar esta forma de expresar una función nunca podrá devolver un objeto. En su lugar se usa el paréntesis para indicar que lo que está dentro es un objeto
+const showObject = () => { name: 'Ernesto', lastname: 'Perez' }
+// const showObject = () => ({ name: 'Ernesto', lastname: 'Perez' })
+console.log(showObject())
+
+
 
 // 8. Funciones como parámetros
 // Se puede pasar una función como parámetro a otra función y dentro de ésta ejecutar su llamado
