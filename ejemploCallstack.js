@@ -1,4 +1,7 @@
 function cortar(ingrediente) {
+    // if(ingrediente === 'lechuga') {
+    //     throw new Error('No hay lechuga')
+    // }
     console.log(`Cortar ${ingrediente}`)
 }
 
@@ -7,6 +10,7 @@ function mezclarIngredientes(veces) {
 
     console.log(`Mezclar #${veces}`)
     mezclarIngredientes(veces - 1)
+    // mezclarIngredientes(veces)
 }
 
 function comer() {
@@ -15,7 +19,7 @@ function comer() {
 
 function hacerEnsaladaMixta() {
     cortar('tomate')
-    cortar('lechuba')
+    cortar('lechuga')
     cortar('cebolla')
     mezclarIngredientes(5)
     comer()
