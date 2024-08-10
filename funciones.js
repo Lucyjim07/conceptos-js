@@ -2,20 +2,19 @@
 // 1. Declarar la función y luego usarla, ejecutarla
 // Function definition
 function add(num1, num2) {
-    return num1 + num2
+    return num1 + num2;
 }
 
-const addResult = add(5, 10)
-console.log(addResult)
-
+const addResult = add(5, 10);
+console.log(addResult);
 
 // Function expression
 // 2. Ejecutar la función y luego definirla
 const subtractResult = subtract(7, 2);
-console.log(subtractResult)
+console.log(subtractResult);
 
 function subtract(num1, num2) {
-    return num1 - num2
+    return num1 - num2;
 }
 
 // Porque este caso funciona?
@@ -26,136 +25,132 @@ function subtract(num1, num2) {
 // 3. Funciones anonimas
 // Son funciones que no tienen nombre para poderlas ejecutar se debe hacer un autollamado en el momento de ejecución
 (function () {
-    console.log("x vale: ", x)
+    console.log("x vale: ", x);
     var x = 10;
-    console.log("x vale: ", x)
+    console.log("x vale: ", x);
 })();
 
 (function (name) {
-    console.log(`hello: ${name}`)
-})('Lucy');
-
+    console.log(`hello: ${name}`);
+})("Lucy");
 
 // Analizar como funciona la asignación de variables y el hoisting al momento de reservar espacio en memoria y asignar un valor (una función puede ser un valor)
 // intercambiar var, const, let
-var variable
-console.log(variable)
-variable = 5
-console.log(variable)
+var variable;
+console.log(variable);
+variable = 5;
+console.log(variable);
 
-
-// 4. Hoisting con un funciones
+// 4. Hoisting con funciones
 // Se pueden asignar funciones anónimas a variables y lo que hace el interprete es reservar espacio en memoria para las variables y luego intentará asignar el valor que en este caso es una función a la variable
-
 
 // Los siguientes son ejemplos de funciones anomimas asignadas a una variabla y expresión de funciones
 // 5. Declarar la función y luego usarla, ejecutarla
 const add = function (num1, num2) {
-    return num1 + num2
-}
+    return num1 + num2;
+};
 
-const addResultFunc = add(5, 10)
-console.log(addResultFunc)
-
+const addResultFunc = add(5, 10);
+console.log(addResultFunc);
 
 // 6. Ejecutar la función y luego definirla
 const subtractResultFunc = subtract(7, 2);
-console.log(subtractResultFunc)
+console.log(subtractResultFunc);
 
 const subtract = function (num1, num2) {
-    return num1 - num2
-}
-
+    return num1 - num2;
+};
 
 // 7. Arrow Functions
 // Se presentan como una ayuda o mejora en la sintaxis para escribir las funciones
 
 // función tradicional (función anónima asignada a una variable)
 let addOriginal = function (num1, num2) {
-    return num1 + num2
-}
+    return num1 + num2;
+};
 
 // arrow function
 let add = (num1, num2) => {
-    return num1 + num2
-}
-console.log(add(5, 8))
+    return num1 + num2;
+};
+console.log(add(5, 8));
 
 // diferencias
 // Se elimina la palabra recervada "function" y se agrega el simbolo igual(=) + mayor que(>) que representan una flecha (=>). De allí el nombre función flecha, este simbolo se agrega entre los parámetros de la función y el cuerpo de la función
-// (...parámetros) => { ...cuerpo-de-función } 
+// (...parámetros) => { ...cuerpo-de-función }
 // Si el cuerpo de la funcion solo tiene una sentencia que se va a retornar directamente, se puede eliminar la palabra reservada "return" quedando en una expresión más simple
-let addSimple = (num1, num2) => num1 + num2
-console.log(addSimple(2, 2))
+let addSimple = (num1, num2) => num1 + num2;
+console.log(addSimple(2, 2));
 // Si la cantidad de parametros de la arrow function es solo uno, se pueden eliminar los parentesis de la parte de la izquierda de la expresión
-let sayHello = name => { console.log(`Hello ${name}`) }
-sayHello('Lucy')
+let sayHello = (name) => {
+    console.log(`Hello ${name}`);
+};
+sayHello("Lucy");
 // Si la cantidad de parámetros de la arrow function es 0, se "debe" colocar los parentesis para indicar que no existen parámetros
-let helloWorld = () => { console.log('Hello world') }
-helloWorld()
+let helloWorld = () => {
+    console.log("Hello world");
+};
+helloWorld();
 
 // Esta forma más simple de representar puede retornar cualquier tipo de primitivo y también puede retornar otra funcion, pero existe un caso especial al momento de retornar objetos.
-const showText = () => 'Un texto'
-console.log(showText())
+const showText = () => "Un texto";
+console.log(showText());
 
-const showNumber = () => 20
-console.log(showNumber())
+const showNumber = () => 20;
+console.log(showNumber());
 
-const showBoolean = () => true
-console.log(showBoolean())
+const showBoolean = () => true;
+console.log(showBoolean());
 
-const showArray = () => [1, 2, 3]
-console.log(showArray())
+const showArray = () => [1, 2, 3];
+console.log(showArray());
 
-const showFunction = () => function() {}
-console.log(showFunction())
+const showFunction = () => function () {};
+console.log(showFunction());
 
 // Cuando se declara una función, las llaves indican que se va a inicir el cuerpo de la función, por lo que al usar esta forma de expresar una función nunca podrá devolver un objeto. En su lugar se usa el paréntesis para indicar que lo que está dentro es un objeto
-const showObject = () => { name: 'Ernesto', lastname: 'Perez' }
-// const showObject = () => ({ name: 'Ernesto', lastname: 'Perez' })
-console.log(showObject())
-
-
+// const showObject = () => { name: 'Ernesto', lastname: 'Perez' }
+const showObject = () => ({ name: "Ernesto", lastname: "Perez" });
+console.log(showObject());
 
 // 8. Funciones como parámetros
 // Se puede pasar una función como parámetro a otra función y dentro de ésta ejecutar su llamado
 const operar = (num1, num2, operacion) => {
-    return operacion(num1, num2)
-}
+    return operacion(num1, num2);
+};
 
 const operacionSuma = (num1, num2) => num1 + num2;
 const operacionResta = (num1, num2) => num1 - num2;
 const operacionMultiplicacion = (num1, num2) => num1 * num2;
 
-console.log(operar(5, 2, operacionSuma))
-console.log(operar(5, 2, operacionResta))
-console.log(operar(5, 2, operacionMultiplicacion))
-
+console.log(operar(5, 2, operacionSuma));
+console.log(operar(5, 2, operacionResta));
+console.log(operar(5, 2, operacionMultiplicacion));
 
 // 9. callback
-// Los callback son funciones que que se pasan por parámetro a otra función y se ejecutan después de hacer algo
+// Los callback son funciones que que se pasan por argumento a otra función y se ejecutan después de hacer algo
 
 function modify(array, callback) {
     // hacemos algo...
-    array.push('Uriel')
+    array.push("Uriel");
     // después de hacer algo, llamar la función callback
-    callback(array)
+    callback(array);
 
     // setTimeout(function () {
     //     callback(array)
     // }, 3000);
 }
 
-const angels = ['Miguel', 'Gabriel', 'Rafael']
+const angels = ["Miguel", "Gabriel", "Rafael"];
 
-modify(angels, function(array) {
-    console.log(`he modificado el arreglo y ahora es de ${array.length} elementos`)
-})
+modify(angels, function (array) {
+    console.log(
+        `he modificado el arreglo y ahora es de ${array.length} elementos`
+    );
+});
 
 // un callback es una función que se pasa a otra como argumento y se ejecuta después de que se haya completado alguna cosa.
-const names = ['Miguel', 'Gabriel', 'Rafael']
+const names = ["Miguel", "Gabriel", "Rafael"];
 names.forEach(function (name) {
-    console.log(name)
-})
-
-
+    console.log(name);
+});
