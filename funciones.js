@@ -154,3 +154,25 @@ const names = ["Miguel", "Gabriel", "Rafael"];
 names.forEach(function (name) {
     console.log(name);
 });
+
+const getUsers = (callback) => {
+    setTimeout(() => {
+        const users = [
+            { id: 1, name: 'pepe' },
+            { id: 2, name: 'juan' }
+        ]
+
+        callback(users);
+    }, 500)
+}
+
+const printUsers = users => {
+    console.log('users: ', users)
+}
+
+
+getUsers((users) => {
+    console.log('users: ', users)
+})
+
+getUsers(printUsers)
