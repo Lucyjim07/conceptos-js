@@ -111,3 +111,92 @@ console.log( `The correct number, ${ randomNum }, was found.` );
 
 
 
+// 2. do ... while
+// do... while es una variante del bucle while en la que la evaluación condicional ocurre al final de cada iteración del bucle. Esto significa que el cuerpo del bucle siempre se ejecuta al menos una vez.
+
+// Para crear un bucle do...while, usa la palabra clave do seguida de la declaración (o la declaración de bloque) que se ejecutará en cada iteración del bucle. Inmediatamente después de esa declaración, agrega while y los paréntesis que coincidan con la condición que se evaluará. Cuando esta condición ya no se evalúa como true, el bucle finaliza.
+
+let iterationCount = 1;
+do {
+  console.log( `Loop ${ iterationCount }.` );
+  iterationCount++;
+} while ( iterationCount < 3 );
+
+
+// Al igual que con un bucle while, el caso de uso más común para do... while es un bucle de longitud indeterminada
+
+let randomize = () => Math.floor( Math.random() * 10 );
+let randomNum;
+
+do {
+  randomNum = randomize()
+  console.log( `Is the number ${ randomNum }?` );
+} while ( randomNum !== 3 );
+console.log( `Yes, ${ randomNum } was the correct number.` );
+
+
+
+// 3. for
+// Usa bucles for para iterar en una cantidad conocida.
+// Para crear un bucle for, usa la palabra clave for seguida de un conjunto de paréntesis que acepte las siguientes tres expresiones en orden y separadas por punto y coma:
+
+// 1. Una expresión que se evaluará cuando comience el bucle.
+// 2. Una condición que determina si el bucle debe continuar
+// 3. Una expresión que se ejecutará al final de cada bucle
+// Después de estos paréntesis, agrega la declaración (por lo general, una declaración de bloque) que se ejecutará durante el bucle.
+
+
+for( let i = 0; i < 3; i++ ) {
+  console.log( "This loop will run three times.")
+}
+
+// La primera expresión inicializa una variable que actúa como un contador. Esta expresión se evalúa una vez, antes de la primera iteración del bucle. Puedes inicializar esta variable con let como cualquier otra variable y su alcance es el cuerpo del bucle. Estas variables pueden tener cualquier identificador válido, pero con frecuencia se las llama i para "iteración" o "índice". Estas variables casi siempre tienen un valor inicial de 0.
+
+// Al igual que con otras formas de bucle, la condición es una expresión que determina si el bucle debe ejecutarse. Se usa para establecer un límite superior para el contador de iteraciones. El intérprete evalúa la condición antes de ejecutar el bucle for por primera vez.
+
+// La expresión final se ejecuta al final de cada iteración a través del bucle. Por lo general, se usa para aumentar el identificador en uno.
+
+var myArray = [ true, false, true ];
+for( let i = 0; i <= myArray.length; i++ ) {
+  console.log( myArray[ i ] );
+}
+
+// Este enfoque dejó de usarse y se reemplazó por enfoques más modernos de bucle.
+
+// 4 for [...] of [...]
+// Usa bucles for...of... para iterar sobre los valores almacenados en una estructura de datos iterables, como un array, un set o un map.
+
+// Un bucle for...of... usa la palabra clave for seguida de un conjunto de paréntesis que contiene una variable, seguida de of y, luego, la estructura de datos que se itera. 
+
+const myIterable = [ true, false, true ];
+for( const myElement of myIterable ) {
+  console.log( myElement );
+}
+
+const listaEmpleados = [
+  { id: 1, nombre: 'Hugo', cargo: 'Trabajador' },
+  { id: 2, nombre: 'Paco', cargo: 'Gerente' },
+  { id: 3, nombre: 'Luis', cargo: 'Administrador' }
+]
+// Destructuracion del objeto iterable
+for ( const { nombre, cargo } of listaEmpleados) {
+  console.log(`Empleado: ${nombre} - ${cargo}`)
+}
+
+
+// 5. forEach()
+// Los métodos forEach() que se proporcionan en los Array, Map, Set y NodeList proporcionan una abreviatura útil para iterar sobre una estructura de datos en la que se puede usar una funcion callback. A diferencia de otras formas de bucle, un bucle creado con cualquier método forEach() no se puede interrumpir usando break ni continue.
+
+const myArray = [ true, false ];
+myArray.forEach( ( myElement, index, originalArray ) => {
+  console.log( index, myElement, originalArray  );
+});
+
+
+
+// Javascript asíncrono
+// Si bien JavaScript es en esencia síncrono en ejecución, hay mecanismos que permiten a los desarrolladores aprovechar el event loop para realizar tareas asíncronas.
+
+// 6. Promesas
+
+// 7. Async / Await
