@@ -1,0 +1,12 @@
+{
+  "name": "array-methods",
+  "version": "1.0.0",
+  "description": "Revision de los metodos de los arreglos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
