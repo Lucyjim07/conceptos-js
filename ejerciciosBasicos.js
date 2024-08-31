@@ -153,9 +153,11 @@ console.log(2 === "2"); // false
 // OPERADORES LÓGICOS
 // Usa los operadores lógicos AND (&&), OR (||) y NOT (!) para controlar el flujo de una secuencia de comandos en función de la evaluación de dos o más sentencias condicionales
 
-console.log(2 === 3 || 5 === 5);
-
+console.log( true && true && true && true )
 console.log(2 === 2 && 2 === "2");
+
+console.log( false || true || false || false )
+console.log(2 === 3 || 5 === 5)
 
 console.log(2 === 2 && !"My string.");
 
@@ -174,11 +176,16 @@ console.log(!!"string")
 console.log(!!0)
 
 
-// El operador AND (&&) muestra el primero de sus dos operandos solo si ese operando se evalúa como false, y el segundo operando en caso contrario. 
+// El operador AND (&&) 
+// muestra el primero de sus dos operandos 
+// solo si ese operando se evalúa como false, 
+// y muestra el segundo operando en caso contrario,
+// si el primer operador se evalúa como true.
+
 // En las comparaciones que se evalúan como valores booleanos, muestra true solo si los operandos en ambos lados del operador lógico AND se evalúan como true. Si cualquiera de los lados se evalúa como false, muestra false.
 
 function operadorAnd() {
-    const valor = 0
+    const valor = 10
     return valor && 'Otro valor'
 }
 
@@ -193,12 +200,17 @@ else
     console.log("Alguna de las condiciones es falsa")
 
 
-// OR lógico (||) muestra el primero de sus dos operandos solo si ese operando se evalúa como true y el segundo operando en caso contrario. 
+// El operador OR (||) 
+// muestra el primero de sus dos operandos 
+// solo si ese operando se evalúa como true 
+// y muestra el segundo operando en caso contrario, 
+// si el primer operando se evalúa como false
+
 // En las comparaciones que se evalúan como valores booleanos, esto significa que muestra true si alguno de los operandos se evalúa como true y si ninguno de los lados se evalúa como true, muestra false:
 
 function operadorOr() {
-    const valor = 1
-    return valor || 'Otro valor'
+    let valor = 4
+    return valor || 'Valor no valido'
 }
 
 const resultadoOr = operadorOr()
@@ -213,13 +225,17 @@ else
 
 
 // Operador coalescente nulo
-// el "operador coalescente nulo" (??) muestra el primer operando solo si ese operando tiene algún valor distinto de null o undefined. De lo contrario, muestra el segundo operando.
+// el "operador coalescente nulo" (??) 
+// muestra el primer operando 
+// solo si ese operando tiene 
+// algún valor distinto de null o undefined. 
+// De lo contrario, muestra el segundo operando.
 
 function operadorNulo() {
     const valor = [1, 2, 3]
     // const valor = null
     // const valor = undefined
-    return valor ?? 'Otro valor'
+    return valor ?? 'No hay valores para mostrar'
 }
 
 const resultadoNulo = operadorNulo()
