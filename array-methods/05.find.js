@@ -1,12 +1,10 @@
-import { foodObjects } from './array-base.js'
+import { foodObjects } from './array-base.js';
 
-// 05 Array.find(callbackFunction);
+// 05 array.find(callback);
 // devuelve el valor del primer elemento del arreglo que cumple la condición de la callback proporcionada.
-const found = foodObjects.find((element) => {
-    return element.color === 'yellow'
-});
-console.log(found)
-
+const found = foodObjects.find((element) => element.color === 'pink');
+console.log(found);
+console.log(foodObjects)
 
 // Array.find((element) => {
 //     // code ...

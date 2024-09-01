@@ -1,12 +1,12 @@
-import { foodObjects } from './array-base.js'
+import { foodObjects } from './array-base.js';
 
-// 09. Array.some(callback);
+// 09. array.some(callback);
 // comprueba si al menos un elemento del array cumple con la condición implementada por la función proporcionada.
 
 const existSomeElement = foodObjects.some((element) => {
-    return element.color === 'orange'
+    return element.color === 'yellow';
 });
-console.log(existSomeElement)
+console.log(existSomeElement);
 
 // Array.some((element) => {
 //     // code ...

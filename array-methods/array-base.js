@@ -13,7 +13,8 @@ export const foodObjects = [
     { id: 7, type: 'fruit', name: 'grape', color: 'purple', foodSymbol: '🍇' },
     { id: 8, type: 'vegetable', name: 'potato', color: 'brown', foodSymbol: '🥔' },
     { id: 9, type: 'fruit', name: 'avocado', color: 'green', foodSymbol: '🥑' },
-    { id: 10, type: 'vegetable', name: 'corn', color: 'yellow', foodSymbol: '🌽' }
+    { id: 10, type: 'vegetable', name: 'corn', color: 'yellow', foodSymbol: '🌽' },
+    { id: 11, type: 'fruit', name: 'apple', color: 'green', foodSymbol: '🍏' },
 ]
 
 export const months = [

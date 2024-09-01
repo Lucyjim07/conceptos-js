@@ -1,7 +1,8 @@
-import { food } from './array-base.js'
+import { food, fastFood } from './array-base.js';
 
-// 12. Array.push(element);
+// 12. array.push(element);
 // añade uno o más elementos al final de un array y devuelve la nueva longitud del array.
 
-const newLength = food.push('🍉', '🥦')
-console.log(newLength, food)
+console.log(food.length);
+const newLength = food.push('🍉', '🥦', fastFood);
+console.log(newLength, food);

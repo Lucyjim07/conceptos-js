@@ -1,12 +1,13 @@
-import { food } from './array-base.mjs'
+import { food } from './array-base.js';
 
-// 01 Array.forEach(callbackFunction);
+// 01 array.forEach(callback);
 // Ejecuta la funcion callback una vez por cada elemento del arreglo
-food.forEach((element) => {
-    console.log(element)
+const resultado = food.forEach((element) => {
+    element = element + element;
+    console.log(element);
 });
-console.log(food)
-
+console.log(resultado);
+console.log(food);
 
 // Array.forEach((element) => {
 //     // code ...
