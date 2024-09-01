@@ -1,7 +1,7 @@
-import { food } from './array-base.js'
+import { food, foodObjects } from './array-base.js';
 
-// 14. Array.pop();
+// 14. array.pop();
 // elimina el último elemento de un array y lo devuelve. Este método cambia la longitud del array.
 
-const removedItem = food.pop()
-console.log(removedItem, food)
+const removedItem = foodObjects.pop();
+console.log(removedItem, foodObjects);
