@@ -1,4 +1,4 @@
-import { orderedNumbers, food } from './array-base.js'
+import { orderedNumbers, food } from './array-base.js';
 
 // 31. array.reduceRight(callback)
 // 31. array.reduceRight(callback, initialValue)
@@ -7,7 +7,7 @@ import { orderedNumbers, food } from './array-base.js'
 // la funcion reductora se forma de la siguiente manera
 function reducerFunctionName(previousValue, currentValue) {
     /* code goes here */
-    return /* value */
+    return; /* value */
 }
 
 function reducer(previousValue, currentValue) {
@@ -15,4 +15,4 @@ function reducer(previousValue, currentValue) {
 }
 
 const sumArray = orderedNumbers.reduceRight(reducer);
-console.log(sumArray)
+console.log(sumArray);
