@@ -8,8 +8,8 @@ Para este proyecto se usa la extensión de VSCode llamada Code Runner la cual ay
 
 1. Seleccionar el código que se quiere ejecutar
 2. Ejecutarlo de alguna de las siguientes formas
-   - Click derecho y en el menú que aparece usar la opción `run code`
-   - Usar la combinación de teclas `ctrl + alt + n`
+    - Click derecho y en el menú que aparece usar la opción `run code`
+    - Usar la combinación de teclas `ctrl + alt + n`
 3. En la consola de salida se mostrarán los resultados
 
 ## Lista de conceptos a estudiar
@@ -23,7 +23,7 @@ Para este proyecto se usa la extensión de VSCode llamada Code Runner la cual ay
 4. Objetos: Colecciones de propiedades llave-valor.
 5. Arreglos: Listas ordenadas de valores.
 6. Ciclos: Acciones repetidas multiples veces.
-7. Condicionales: Ejecutar sentencias de código en base a condiciones. \*\*
+7. Condicionales: Ejecutar sentencias de código en base a condiciones.
 8. Scope: Alcance de la visibilidad de las variables y las funciones
    https://www.youtube.com/watch?v=s-7C09ymzK8
 9. Hoisting: Declaración de variables y funciones y cómo se guardan en memoria.
@@ -46,8 +46,8 @@ Para este proyecto se usa la extensión de VSCode llamada Code Runner la cual ay
 19. Destructuración: Extracción de valores desde arreglos u objetos. \*\*
     https://www.youtube.com/watch?v=ERVUtjBojGo
 20. Templeate literals: Creación de cadenas de caractes y de múltiples líneas. \*\*
-21. Modules: Import/Export compartir código a través de archivos.
-22. Type coercion: conversión automática entre tipos.
+21. Modules: Import/Export compartir código a través de archivos. \*\*
+22. Type coercion: conversión automática entre tipos. \*\*
 23. Strict mode: Obligar el modo estricto y el manejo de errores \*\*
     https://www.youtube.com/watch?v=7e6ssF78Af4
-24. JSON: Formateo de data par intercambio de información.
+24. JSON: Formateo de data para intercambio de información. \*\*
