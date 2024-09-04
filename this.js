@@ -1,61 +1,55 @@
 // El objeto this
-// 'this' es un objeto especial de Javascript que hace referencia al contexto en donde se ejecuta. Se refiere al objeto que se está actualmente ejecutando una función. Su valor está determinado por como la función es llamada y no en donde está definida.
+// 'this' es un objeto especial de Javascript que hace referencia al contexto en donde se ejecuta. Se refiere al objeto que está actualmente ejecutando una función. Su valor está determinado por como la función es llamada y no en donde está definida.
 
 function getName() {
-    // console.log(this)
-    console.log(this.name)
+    console.log(this);
+    console.log(this.name);
 }
 
-global.name = 'Lucy'
+// global.name = 'Lucy';
+// getName();
 
-getName()
+const perfil = {
+    name: 'Ale',
+    saludar: getName,
+};
 
-
-
-// const perfil = {
-//     name: 'Ale',
-//     getName: getName
-// }
-
-// perfil.getName()
+perfil.saludar();
 
 const video = {
-    title: 'video name',
+    title: 'nombre del video',
     play: function () {
-        console.log(this)
-    }
-}
+        console.log(this.title);
+    },
+};
 
 // video.play()
 
 video.stop = function () {
-    console.log(this)
-}
+    console.log(this);
+};
 
-video.stop()
+video.stop();
 
 // ------------------------------
 function playVideo() {
-    console.log(this)
+    console.log(this);
 }
 
-playVideo()
-
-
-
+playVideo();
 
 // ------------------------------
 const video = {
     title: 'video name',
     tags: ['tag 1', 'tag 2', 'tag 3'],
     play: function () {
-        console.log(this)
+        console.log(this.title);
     },
     showTags: function () {
-        this.tags.forEach(function (tag) {
-            console.log(tag);
-        })
-    }
-}
+        this.tags.forEach((tag) => {
+            console.log(this.title, tag);
+        });
+    },
+};
 
-video.showTags()
+video.play();
